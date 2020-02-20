@@ -1239,6 +1239,11 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1791187393}
+    - target: {fileID: 3201026284167537952, guid: cf4f3b9a22ed75249bbbba4e0184da35,
+        type: 3}
+      propertyPath: chaseRange
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 3201026284167537953, guid: cf4f3b9a22ed75249bbbba4e0184da35,
         type: 3}
       propertyPath: m_Name

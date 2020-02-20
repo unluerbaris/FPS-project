@@ -27,5 +27,12 @@ namespace ES.Control
                 navMeshAgent.SetDestination(target.position);
             }
         }
+
+        void OnDrawGizmosSelected()
+        {
+            // Display the chaseRange radius when selected
+            Gizmos.color = new Color(1, 1, 0, 0.75f); // yellow
+            Gizmos.DrawWireSphere(transform.position, chaseRange);
+        }
     }
 }
