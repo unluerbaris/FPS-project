@@ -8,7 +8,11 @@ namespace ES.Control
     public class EnemyAI : MonoBehaviour
     {
         [SerializeField] Transform target;
+        [SerializeField] float chaseRange = 8f;
+
         NavMeshAgent navMeshAgent;
+
+        float distanceToTarget = Mathf.Infinity;
 
         void Start()
         {
@@ -17,7 +21,11 @@ namespace ES.Control
 
         void Update()
         {
-            navMeshAgent.SetDestination(target.position);
+            distanceToTarget = Vector3.Distance(target.position, transform.position);
+            if (distanceToTarget <= chaseRange)
+            {
+                navMeshAgent.SetDestination(target.position);
+            }
         }
     }
 }
