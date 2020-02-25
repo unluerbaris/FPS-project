@@ -163,6 +163,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &219031051 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3201026284167537953, guid: cf4f3b9a22ed75249bbbba4e0184da35,
+    type: 3}
+  m_PrefabInstance: {fileID: 3201026284034242633}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &219031058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 219031051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226ff90243e164d51b04c66410a1b8c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 100
 --- !u!1001 &311806076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1445,6 +1464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FPSCamera: {fileID: 1242615180}
   range: 100
+  damage: 20
 --- !u!1001 &2130730609
 PrefabInstance:
   m_ObjectHideFlags: 0
