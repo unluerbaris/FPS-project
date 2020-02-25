@@ -9,7 +9,8 @@ namespace ES.Combat
     {
         [SerializeField] Camera FPSCamera;
         [SerializeField] float range = 100f;
-        [SerializeField] float damage = 20f;
+        [SerializeField] float weaponDamage = 20f;
+        [SerializeField] ParticleSystem muzzleFlash;
 
         void Update()
         {
@@ -21,6 +22,17 @@ namespace ES.Combat
 
         private void Shoot()
         {
+            PlayMuzzleFlash();
+            ProcessRaycast();
+        }
+
+        private void PlayMuzzleFlash()
+        {
+            muzzleFlash.Play();
+        }
+
+        private void ProcessRaycast()
+        {
             RaycastHit hit;
             bool hasHit = Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range);
             if (hasHit)
@@ -30,7 +42,7 @@ namespace ES.Combat
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 if (target == null) return;
 
-                target.TakeDamage(damage);
+                target.TakeDamage(weaponDamage);
             }
             else // if raycast can't hit anything, just return
             {
