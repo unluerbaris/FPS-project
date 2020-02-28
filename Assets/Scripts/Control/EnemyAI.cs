@@ -11,6 +11,7 @@ namespace ES.Control
         [SerializeField] float chaseRange = 8f;
 
         NavMeshAgent navMeshAgent;
+        Animator animator;
 
         float distanceToTarget = Mathf.Infinity;
         bool isProvoked = false;
@@ -18,6 +19,7 @@ namespace ES.Control
         void Start()
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
+            animator = GetComponent<Animator>();
         }
 
         void Update()
@@ -39,6 +41,7 @@ namespace ES.Control
             {
                 ChaseTarget();
             }
+
             if (distanceToTarget <= navMeshAgent.stoppingDistance)
             {
                 AttackTarget();
@@ -47,12 +50,14 @@ namespace ES.Control
 
         private void ChaseTarget()
         {
+            animator.SetBool("attack", false);
+            animator.SetTrigger("move");
             navMeshAgent.SetDestination(target.position);
         }
 
         private void AttackTarget()
         {
-            Debug.Log(gameObject.name + " is attacking to " + target.name);
+            animator.SetBool("attack", true);
         }
 
         void OnDrawGizmosSelected()
