@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ES.Core;
+using System;
 
 namespace ES.Combat
 {
@@ -11,6 +12,7 @@ namespace ES.Combat
         [SerializeField] float range = 100f;
         [SerializeField] float weaponDamage = 20f;
         [SerializeField] ParticleSystem muzzleFlash;
+        [SerializeField] GameObject hitEffect;
 
         void Update()
         {
@@ -37,8 +39,7 @@ namespace ES.Combat
             bool hasHit = Physics.Raycast(FPSCamera.transform.position, FPSCamera.transform.forward, out hit, range);
             if (hasHit)
             {
-                Debug.Log("Hits " + hit.transform.name);
-
+                CreateHitImpact(hit);
                 EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
                 if (target == null) return;
 
@@ -48,6 +49,12 @@ namespace ES.Combat
             {
                 return;
             }
+        }
+
+        private void CreateHitImpact(RaycastHit hit)
+        {
+            GameObject hitEffectInstance = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(hitEffectInstance, 0.1f);
         }
     }
 }
