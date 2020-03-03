@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   chaseRange: 18
+  turnSpeed: 5
 --- !u!114 &219031058
 MonoBehaviour:
   m_ObjectHideFlags: 0

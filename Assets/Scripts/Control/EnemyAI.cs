@@ -9,6 +9,7 @@ namespace ES.Control
     {
         [SerializeField] Transform target;
         [SerializeField] float chaseRange = 8f;
+        [SerializeField] float turnSpeed = 5f;
 
         NavMeshAgent navMeshAgent;
         Animator animator;
@@ -37,6 +38,8 @@ namespace ES.Control
 
         private void EngageTarget()
         {
+            FaceTarget(); // Look at the target first
+
             if (distanceToTarget > navMeshAgent.stoppingDistance)
             {
                 ChaseTarget();
@@ -58,6 +61,20 @@ namespace ES.Control
         private void AttackTarget()
         {
             animator.SetBool("attack", true);
+        }
+
+        public void FaceTarget()
+        {
+            Vector3 direction = target.position - transform.position;
+            Vector3 normalDirection = direction.normalized;
+
+            Quaternion lookRotation = Quaternion.LookRotation(new Vector3 (normalDirection.x,
+                                                                           0,
+                                                                           normalDirection.z));
+            // Turn the enemy's body to the target smoothly with a rotation speed.
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                                                  lookRotation,
+                                                  Time.deltaTime * turnSpeed);
         }
 
         void OnDrawGizmosSelected()
