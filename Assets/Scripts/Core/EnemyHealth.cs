@@ -10,6 +10,8 @@ namespace ES.Core
 
         public void TakeDamage(float damage)
         {
+            BroadcastMessage("OnDamageTaken"); // Call OnDamageTaken to provoke the enemy
+
             hitPoints -= damage;
             if(hitPoints <= 0)
             {

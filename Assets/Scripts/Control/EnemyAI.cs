@@ -51,6 +51,11 @@ namespace ES.Control
             }
         }
 
+        public void OnDamageTaken() // Call this method with BroadcastMessage
+        {
+            isProvoked = true;
+        }
+
         private void ChaseTarget()
         {
             animator.SetBool("attack", false);
