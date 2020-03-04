@@ -10,13 +10,18 @@ namespace ES.Core
 
         public void TakeDamage(float damage)
         {
+            if (playerHealthPoints <= 0) return; //return if player is dead
+
+            playerHealthPoints -= damage; //player takes damage
+
+            //debug message shows player's health points
+            Debug.Log("Player has " + playerHealthPoints + " health points.");
+
+            //if player dies show Game Over Canvas
             if (playerHealthPoints <= 0)
             {
-                Debug.Log("You are dead");
-                return;
+                GetComponent<GameOverStateManager>().ActivateGameOverCanvas();
             }
-            playerHealthPoints -= damage;
-            Debug.Log("Player has " + playerHealthPoints + " health points.");
         }
     }
 }
