@@ -13,6 +13,7 @@ namespace ES.Combat
         [SerializeField] float weaponDamage = 20f;
         [SerializeField] ParticleSystem muzzleFlash;
         [SerializeField] GameObject hitEffect;
+        [SerializeField] Ammo ammoSlot;
 
         void Update()
         {
@@ -21,11 +22,20 @@ namespace ES.Combat
                 Shoot();
             }
         }
-
+       
         private void Shoot()
         {
+            if (ammoSlot.GetCurrentAmmo() <= 0) return;
+
+            UseAmmo();
             PlayMuzzleFlash();
             ProcessRaycast();
+        }
+
+        private void UseAmmo()
+        {
+            ammoSlot.ReduceCurrentAmmo();
+            Debug.Log(ammoSlot.GetCurrentAmmo());
         }
 
         private void PlayMuzzleFlash()
