@@ -11,25 +11,33 @@ namespace ES.Combat
         [SerializeField] Camera FPSCamera;
         [SerializeField] float range = 100f;
         [SerializeField] float weaponDamage = 20f;
+        [SerializeField] float timeBetweenShots = 0.8f;
         [SerializeField] ParticleSystem muzzleFlash;
         [SerializeField] GameObject hitEffect;
         [SerializeField] Ammo ammoSlot;
 
+        bool canShoot = true;
+
         void Update()
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetMouseButtonDown(0) && canShoot == true)
             {
-                Shoot();
+                StartCoroutine(Shoot());
             }
         }
        
-        private void Shoot()
+        IEnumerator Shoot()
         {
-            if (ammoSlot.GetCurrentAmmo() <= 0) return;
+            if (ammoSlot.GetCurrentAmmo() <= 0) yield break;
+
+            canShoot = false;
 
             UseAmmo();
             PlayMuzzleFlash();
             ProcessRaycast();
+
+            yield return new WaitForSeconds(timeBetweenShots);
+            canShoot = true;
         }
 
         private void UseAmmo()

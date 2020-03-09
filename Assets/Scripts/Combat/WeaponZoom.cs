@@ -19,7 +19,7 @@ namespace ES.Combat
 
         private void Start()
         {
-            firstPersonController = GetComponent<RigidbodyFirstPersonController>();
+            firstPersonController = GetComponentInParent<RigidbodyFirstPersonController>();
 
             // Set the mouse sensitivity at start
             firstPersonController.mouseLook.XSensitivity = zoomOutMouseSensitivity;
