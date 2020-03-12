@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ES.Combat;
 
 namespace ES.Core
 {
@@ -18,6 +19,8 @@ namespace ES.Core
             gameOverCanvas.enabled = true;
 
             Time.timeScale = 0; // this stops the game
+
+            FindObjectOfType<WeaponSwitcher>().enabled = false; //can't switch weapons on game over screen
 
             // unlock the cursor and make it visible
             Cursor.lockState = CursorLockMode.None; 
