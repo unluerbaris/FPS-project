@@ -17,6 +17,11 @@ namespace ES.Combat
 
         RigidbodyFirstPersonController firstPersonController;
 
+        private void OnDisable() // zoom out if the player changes weapon
+        {
+            ZoomOut();
+        }
+
         private void Start()
         {
             firstPersonController = GetComponentInParent<RigidbodyFirstPersonController>();
