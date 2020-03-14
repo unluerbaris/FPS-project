@@ -15,6 +15,11 @@ namespace ES.Combat
 
         void Update()
         {
+            SwitchWeapons();
+        }
+
+        private void SwitchWeapons()
+        {
             int previousWeaponIndex = currentWeaponIndex;
 
             // Process methods can change the currentWeaponIndex value to set a new weapon
@@ -65,7 +70,7 @@ namespace ES.Combat
 
         private void ProcessScrollWheel()
         {
-            if (Input.mouseScrollDelta.y > 0) // + wheel direction
+            if (Input.mouseScrollDelta.y < 0)
             {
                 if (currentWeaponIndex >= transform.childCount - 1)
                 {
@@ -76,7 +81,7 @@ namespace ES.Combat
                     currentWeaponIndex++;
                 }
             }
-            else if (Input.mouseScrollDelta.y < 0) // - wheel direction
+            else if (Input.mouseScrollDelta.y > 0)
             {
                 if (currentWeaponIndex <= 0)
                 {

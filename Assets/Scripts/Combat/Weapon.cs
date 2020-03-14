@@ -15,8 +15,14 @@ namespace ES.Combat
         [SerializeField] ParticleSystem muzzleFlash;
         [SerializeField] GameObject hitEffect;
         [SerializeField] Ammo ammoSlot;
+        [SerializeField] AmmoType ammoType;
 
         bool canShoot = true;
+
+        private void OnEnable()
+        {
+            canShoot = true;
+        }
 
         void Update()
         {
@@ -28,7 +34,7 @@ namespace ES.Combat
        
         IEnumerator Shoot()
         {
-            if (ammoSlot.GetCurrentAmmo() <= 0) yield break;
+            if (ammoSlot.GetCurrentAmmo(ammoType) <= 0) yield break;
 
             canShoot = false;
 
@@ -42,8 +48,8 @@ namespace ES.Combat
 
         private void UseAmmo()
         {
-            ammoSlot.ReduceCurrentAmmo();
-            Debug.Log(ammoSlot.GetCurrentAmmo());
+            ammoSlot.ReduceCurrentAmmo(ammoType);
+            Debug.Log(ammoSlot.GetCurrentAmmo(ammoType));
         }
 
         private void PlayMuzzleFlash()

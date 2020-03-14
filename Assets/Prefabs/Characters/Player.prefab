@@ -191,7 +191,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4e3a0b370d944af1820483df57f5c13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 100
+  ammoSlots:
+  - ammoType: 0
+    ammoAmount: 12
+  - ammoType: 1
+    ammoAmount: 6
+  - ammoType: 2
+    ammoAmount: 10
 --- !u!1 &1659361018572502383
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,9 +428,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1224652547965635137}
-  - {fileID: 6191368640791697999}
   - {fileID: 6678640733199490560}
+  - {fileID: 6191368640791697999}
+  - {fileID: 1224652547965635137}
   m_Father: {fileID: 1659361018572400971}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -472,6 +478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeBetweenShots
       value: 1.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5228111844570401700, guid: 8a4f059d3827d4231aac6eacc438c19d,
+        type: 3}
+      propertyPath: ammoType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5725226363797436376, guid: 8a4f059d3827d4231aac6eacc438c19d,
         type: 3}
@@ -579,6 +590,11 @@ PrefabInstance:
       propertyPath: timeBetweenShots
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3592160349630225523, guid: 044355ab43f8f49d9b97afb34d334c06,
+        type: 3}
+      propertyPath: ammoType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3900119204846280719, guid: 044355ab43f8f49d9b97afb34d334c06,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -617,7 +633,7 @@ PrefabInstance:
     - target: {fileID: 3900119204846280719, guid: 044355ab43f8f49d9b97afb34d334c06,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3900119204846280719, guid: 044355ab43f8f49d9b97afb34d334c06,
         type: 3}
@@ -713,7 +729,7 @@ PrefabInstance:
     - target: {fileID: 6927826002611983170, guid: fa2dbdc84888e4edaaa638c926753368,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6927826002611983170, guid: fa2dbdc84888e4edaaa638c926753368,
         type: 3}
