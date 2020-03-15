@@ -25,6 +25,11 @@ namespace ES.Combat
             GetAmmoSlot(ammoType).ammoAmount--;
         }
 
+        public void IncreaseCurrentAmmo(AmmoType ammoType, int pickupAmmoAmount)
+        {
+            GetAmmoSlot(ammoType).ammoAmount += pickupAmmoAmount;
+        }
+
         private AmmoSlot GetAmmoSlot(AmmoType ammoType) // it loops through the AmmoSlot array
         {                                               // and gets the correct ammoSlot
             foreach (AmmoSlot slot in ammoSlots)        // which has the similar ammoType with selected weapon.
