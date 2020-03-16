@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using ES.Core;
 
 namespace ES.Control
 {
@@ -13,6 +14,7 @@ namespace ES.Control
 
         NavMeshAgent navMeshAgent;
         Animator animator;
+        EnemyHealth enemyHealth;
 
         float distanceToTarget = Mathf.Infinity;
         bool isProvoked = false;
@@ -21,10 +23,16 @@ namespace ES.Control
         {
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
+            enemyHealth = GetComponent<EnemyHealth>();
         }
 
         void Update()
         {
+            if (enemyHealth.IsDead())
+            {
+                navMeshAgent.enabled = false;
+                this.enabled = false;
+            }
             distanceToTarget = Vector3.Distance(target.position, transform.position);
             if (isProvoked)
             {
