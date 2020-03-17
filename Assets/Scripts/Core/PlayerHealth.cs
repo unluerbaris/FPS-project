@@ -13,6 +13,7 @@ namespace ES.Core
             if (playerHealthPoints <= 0) return; //return if player is dead
 
             playerHealthPoints -= damage; //player takes damage
+            
 
             //debug message shows player's health points
             Debug.Log("Player has " + playerHealthPoints + " health points.");

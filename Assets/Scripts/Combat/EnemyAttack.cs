@@ -19,6 +19,7 @@ namespace ES.Combat
         {
             if (target == null) return;
             target.TakeDamage(damage);
+            target.GetComponent<DisplayDamage>().DisplayDamageImpact();
         }
     }
 }
