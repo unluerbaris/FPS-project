@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ES.Combat
 {
@@ -28,6 +26,9 @@ namespace ES.Combat
         public void IncreaseCurrentAmmo(AmmoType ammoType, int pickupAmmoAmount)
         {
             GetAmmoSlot(ammoType).ammoAmount += pickupAmmoAmount;
+
+            // Update the ammo display after any ammo increase
+            GetComponentInChildren<Weapon>().UpdateAmmoDisplay();
         }
 
         private AmmoSlot GetAmmoSlot(AmmoType ammoType) // it loops through the AmmoSlot array

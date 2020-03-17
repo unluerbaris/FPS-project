@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ES.Combat
 {
@@ -43,6 +41,9 @@ namespace ES.Combat
                 if (weaponIndex == currentWeaponIndex)
                 {
                     weapon.gameObject.SetActive(true);
+
+                    // Update ammo display after switching the weapon
+                    weapon.gameObject.GetComponent<Weapon>().UpdateAmmoDisplay(); 
                 }
                 else
                 {

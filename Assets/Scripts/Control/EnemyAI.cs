@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using ES.Core;
 
@@ -8,13 +6,13 @@ namespace ES.Control
 {
     public class EnemyAI : MonoBehaviour
     {
-        [SerializeField] Transform target;
         [SerializeField] float chaseRange = 8f;
         [SerializeField] float turnSpeed = 5f;
 
         NavMeshAgent navMeshAgent;
         Animator animator;
         EnemyHealth enemyHealth;
+        Transform target;
 
         float distanceToTarget = Mathf.Infinity;
         bool isProvoked = false;
@@ -24,6 +22,7 @@ namespace ES.Control
             navMeshAgent = GetComponent<NavMeshAgent>();
             animator = GetComponent<Animator>();
             enemyHealth = GetComponent<EnemyHealth>();
+            target = FindObjectOfType<PlayerHealth>().transform;
         }
 
         void Update()
@@ -32,6 +31,7 @@ namespace ES.Control
             {
                 navMeshAgent.enabled = false;
                 this.enabled = false;
+                return;
             }
             distanceToTarget = Vector3.Distance(target.position, transform.position);
             if (isProvoked)

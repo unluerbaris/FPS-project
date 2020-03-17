@@ -1,8 +1,7 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using ES.Core;
-using System;
+using TMPro;
 
 namespace ES.Combat
 {
@@ -16,8 +15,14 @@ namespace ES.Combat
         [SerializeField] GameObject hitEffect;
         [SerializeField] Ammo ammoSlot;
         [SerializeField] AmmoType ammoType;
+        [SerializeField] TextMeshProUGUI ammoValueText;
 
         bool canShoot = true;
+
+        private void Start()
+        {
+            UpdateAmmoDisplay();
+        }
 
         private void OnEnable()
         {
@@ -49,7 +54,12 @@ namespace ES.Combat
         private void UseAmmo()
         {
             ammoSlot.ReduceCurrentAmmo(ammoType);
-            Debug.Log(ammoSlot.GetCurrentAmmo(ammoType));
+            UpdateAmmoDisplay();
+        }
+
+        public void UpdateAmmoDisplay()
+        {
+            ammoValueText.text = ammoSlot.GetCurrentAmmo(ammoType).ToString();
         }
 
         private void PlayMuzzleFlash()

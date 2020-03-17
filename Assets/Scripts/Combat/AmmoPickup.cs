@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace ES.Combat
 {
@@ -8,6 +6,7 @@ namespace ES.Combat
     {
         [SerializeField] int ammoAmount = 5;
         [SerializeField] AmmoType ammoType;
+
 
         private void OnTriggerEnter(Collider other)
         {
