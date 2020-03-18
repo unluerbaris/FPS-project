@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ES.Core
 {
@@ -9,6 +10,8 @@ namespace ES.Core
         [SerializeField] float hitPoints = 100f;
         bool isDead = false;
 
+        [SerializeField] UnityEvent onTakeDamage;
+
         public bool IsDead()
         {
             return isDead;
@@ -16,6 +19,7 @@ namespace ES.Core
 
         public void TakeDamage(float damage)
         {
+            onTakeDamage.Invoke();
             BroadcastMessage("OnDamageTaken"); // Call OnDamageTaken to provoke the enemy
 
             hitPoints -= damage;
