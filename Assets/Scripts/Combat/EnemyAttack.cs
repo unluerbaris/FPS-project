@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ES.Core;
+using UnityEngine.Events;
 
 namespace ES.Combat
 {
@@ -9,6 +10,8 @@ namespace ES.Combat
     {
         PlayerHealth target;
         [SerializeField] float damage = 10f;
+
+        [SerializeField] UnityEvent onAttack;
 
         void Start()
         {
@@ -18,6 +21,7 @@ namespace ES.Combat
         public void AttackHitEvent() // Animation event
         {
             if (target == null) return;
+            onAttack.Invoke();
             target.TakeDamage(damage);
             target.GetComponent<DisplayDamage>().DisplayDamageImpact();
         }

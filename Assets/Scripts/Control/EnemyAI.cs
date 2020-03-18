@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using ES.Core;
+using System.Collections;
+using UnityEngine.Events;
 
 namespace ES.Control
 {
@@ -33,7 +35,9 @@ namespace ES.Control
                 this.enabled = false;
                 return;
             }
+
             distanceToTarget = Vector3.Distance(target.position, transform.position);
+
             if (isProvoked)
             {
                 EngageTarget();

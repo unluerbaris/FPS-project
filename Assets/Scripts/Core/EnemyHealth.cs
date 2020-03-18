@@ -11,6 +11,7 @@ namespace ES.Core
         bool isDead = false;
 
         [SerializeField] UnityEvent onTakeDamage;
+        [SerializeField] UnityEvent onDie;
 
         public bool IsDead()
         {
@@ -19,6 +20,8 @@ namespace ES.Core
 
         public void TakeDamage(float damage)
         {
+            if (isDead) return;
+
             onTakeDamage.Invoke();
             BroadcastMessage("OnDamageTaken"); // Call OnDamageTaken to provoke the enemy
 
@@ -32,6 +35,8 @@ namespace ES.Core
         private void Die()
         {
             if (isDead) return;
+
+            onDie.Invoke();
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
         }
