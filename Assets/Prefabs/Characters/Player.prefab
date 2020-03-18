@@ -492,7 +492,7 @@ PrefabInstance:
     - target: {fileID: 5228111844570401700, guid: 8a4f059d3827d4231aac6eacc438c19d,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 1.6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5228111844570401700, guid: 8a4f059d3827d4231aac6eacc438c19d,
         type: 3}
@@ -603,7 +603,7 @@ PrefabInstance:
     - target: {fileID: 3592160349630225523, guid: 044355ab43f8f49d9b97afb34d334c06,
         type: 3}
       propertyPath: timeBetweenShots
-      value: 1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3592160349630225523, guid: 044355ab43f8f49d9b97afb34d334c06,
         type: 3}

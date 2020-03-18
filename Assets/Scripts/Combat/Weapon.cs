@@ -11,13 +11,14 @@ namespace ES.Combat
         [SerializeField] float range = 100f;
         [SerializeField] float weaponDamage = 20f;
         [SerializeField] float timeBetweenShots = 0.8f;
+        [SerializeField] float newWeaponActivationTime = 1f;
         [SerializeField] ParticleSystem muzzleFlash;
         [SerializeField] GameObject hitEffect;
         [SerializeField] Ammo ammoSlot;
         [SerializeField] AmmoType ammoType;
         [SerializeField] TextMeshProUGUI ammoValueText;
 
-        bool canShoot = true;
+        bool canShoot = false;
 
         private void Start()
         {
@@ -26,7 +27,8 @@ namespace ES.Combat
 
         private void OnEnable()
         {
-            canShoot = true;
+            // Make the weapon ready to shoot after script is enabled
+            StartCoroutine(ActivateWeapon(newWeaponActivationTime));
         }
 
         void Update()
@@ -35,6 +37,12 @@ namespace ES.Combat
             {
                 StartCoroutine(Shoot());
             }
+        }
+
+        IEnumerator ActivateWeapon(float activationDelay)
+        {
+            yield return new WaitForSeconds(activationDelay);
+            canShoot = true;
         }
        
         IEnumerator Shoot()
