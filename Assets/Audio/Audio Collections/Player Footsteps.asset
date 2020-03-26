@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7418c0b61c344b88113bec28871ccf, type: 3}
   m_Name: Player Footsteps
   m_EditorClassIdentifier: 
-  _audioGroup: 
-  _volume: 1
+  _audioGroup: Player
+  _volume: 0.2
   _spatialBlend: 1
-  _priority: 128
-  _audioClipBanks: []
+  _priority: 256
+  _audioClipBanks:
+  - Clips:
+    - {fileID: 8300000, guid: 78fc834fdc6754034aaae7a5af0b4a4a, type: 3}
+    - {fileID: 8300000, guid: f3f62364616ac42249d72baf64e84497, type: 3}

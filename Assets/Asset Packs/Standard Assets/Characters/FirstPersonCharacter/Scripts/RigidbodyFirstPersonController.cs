@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityStandardAssets.CrossPlatformInput;
+using ES.Audio;
 
 namespace UnityStandardAssets.Characters.FirstPerson
 {
@@ -8,6 +9,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
+        [SerializeField] AudioCollections _footSteps = null;
+        
         [Serializable]
         public class MovementSettings
         {
@@ -151,6 +154,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;
                 desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
                 desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
+
+                PlayFootStepSound();
+
                 if (m_RigidBody.velocity.sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
                 {
@@ -259,6 +265,18 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
             {
                 m_Jumping = false;
+            }
+        }
+
+        void PlayFootStepSound()
+        {
+            if (AudioManager.instance != null && _footSteps != null)
+            {
+                AudioClip soundToPlay;
+                soundToPlay = _footSteps[0];
+
+                AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
+                                                      _footSteps.volume, _footSteps.spatialBlend, _footSteps.priority);
             }
         }
     }

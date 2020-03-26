@@ -595,6 +595,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mixer: {fileID: 24100000, guid: ff2110fb61969429ab696514c4d4d017, type: 2}
+  _maxSounds: 10
 --- !u!4 &1727982937
 Transform:
   m_ObjectHideFlags: 0

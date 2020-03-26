@@ -97,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c9795a96c094f4cbde4d65546aa9b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _footSteps: {fileID: 11400000, guid: d9525c087ad284e22b8ae0ca823700e1, type: 2}
   cam: {fileID: 1659361018574010187}
   movementSettings:
     ForwardSpeed: 8
