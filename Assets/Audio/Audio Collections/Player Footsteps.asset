@@ -18,5 +18,14 @@ MonoBehaviour:
   _priority: 256
   _audioClipBanks:
   - Clips:
-    - {fileID: 8300000, guid: 78fc834fdc6754034aaae7a5af0b4a4a, type: 3}
-    - {fileID: 8300000, guid: f3f62364616ac42249d72baf64e84497, type: 3}
+    - {fileID: 8300000, guid: f02c2332417684a62943499a2f8c7a33, type: 3}
+    - {fileID: 8300000, guid: 9b21c901186644b8394339e428fccf97, type: 3}
+    - {fileID: 8300000, guid: cbd1fecfb0f1b4203a8e5c1df82df5f0, type: 3}
+    - {fileID: 8300000, guid: f5ce8d2a7e6d14e5c80031100ee1c329, type: 3}
+    - {fileID: 8300000, guid: eaac4dd9ee47d4708829402e7adabcfe, type: 3}
+    - {fileID: 8300000, guid: 5845d5cfe72df43a1a5990b6df6c6bf8, type: 3}
+    - {fileID: 8300000, guid: 6919f4bf02325451bb4537df4c36d939, type: 3}
+    - {fileID: 8300000, guid: b1381f02f9562430fa5bdf640a9a0aa7, type: 3}
+    - {fileID: 8300000, guid: 6b851aa7cd17b4f35906af2d7ad932e0, type: 3}
+    - {fileID: 8300000, guid: 5b5cc5fb65d7e4706b0f16e450d14558, type: 3}
+    - {fileID: 8300000, guid: f911e993d49a44eaa9c2016668669648, type: 3}

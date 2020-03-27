@@ -155,12 +155,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 desiredMove.z = desiredMove.z*movementSettings.CurrentTargetSpeed;
                 desiredMove.y = desiredMove.y*movementSettings.CurrentTargetSpeed;
 
-                PlayFootStepSound();
 
                 if (m_RigidBody.velocity.sqrMagnitude <
                     (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
                 {
                     m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
+                    PlayFootStepSound();
                 }
             }
 
@@ -274,7 +274,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 AudioClip soundToPlay;
                 soundToPlay = _footSteps[0];
-
                 AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
                                                       _footSteps.volume, _footSteps.spatialBlend, _footSteps.priority);
             }

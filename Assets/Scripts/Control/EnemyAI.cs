@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.AI;
 using ES.Core;
+using ES.Audio;
 
 namespace ES.Control
 {
     public class EnemyAI : MonoBehaviour
     {
+        [SerializeField] AudioCollections _footSteps = null;
         [SerializeField] float chaseRange = 8f;
         [SerializeField] float turnSpeed = 5f;
 
@@ -68,6 +70,7 @@ namespace ES.Control
 
         private void ChaseTarget()
         {
+            PlayFootStepSound();
             animator.SetBool("attack", false);
             animator.SetTrigger("move");
             navMeshAgent.SetDestination(target.position);
@@ -90,6 +93,17 @@ namespace ES.Control
             transform.rotation = Quaternion.Slerp(transform.rotation,
                                                   lookRotation,
                                                   Time.deltaTime * turnSpeed);
+        }
+
+        void PlayFootStepSound()
+        {
+            if (AudioManager.instance != null && _footSteps != null)
+            {
+                AudioClip soundToPlay;
+                soundToPlay = _footSteps[0];
+                AudioManager.instance.PlayOneShotSound("Zombies", soundToPlay, transform.position,
+                                                      _footSteps.volume, _footSteps.spatialBlend, _footSteps.priority);
+            }
         }
 
         void OnDrawGizmosSelected()

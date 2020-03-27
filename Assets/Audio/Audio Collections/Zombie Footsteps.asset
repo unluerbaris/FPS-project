@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7418c0b61c344b88113bec28871ccf, type: 3}
+  m_Name: Zombie Footsteps
+  m_EditorClassIdentifier: 
+  _audioGroup: Zombies
+  _volume: 0.2
+  _spatialBlend: 1
+  _priority: 128
+  _audioClipBanks:
+  - Clips:
+    - {fileID: 8300000, guid: f31bbc497aa184c448549894d8f3a072, type: 3}
+    - {fileID: 8300000, guid: 58fee97c0e14a4990a34e474bad78c55, type: 3}
+    - {fileID: 8300000, guid: 9983249dcf1b440c5b555911000e3b58, type: 3}
+    - {fileID: 8300000, guid: 68301105f1a7d467bb8bedbe5d544e2e, type: 3}

@@ -233,10 +233,10 @@ namespace ES.Audio
                 activeSound.AudioSource.clip = null;
                 activeSound.GameObject.SetActive(false);
                 _activePool.Remove(id);
-            }
 
-            // Make it available again
-            activeSound.Playing = false;
+                // Make it available again
+                activeSound.Playing = false;
+            }
         }
 
         public void StopOneShotSound(ulong id)
