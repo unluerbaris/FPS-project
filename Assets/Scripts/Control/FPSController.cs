@@ -191,6 +191,12 @@ namespace ES.Control
 			if (Time.timeScale > Mathf.Epsilon)
 				_mouseLook.LookRotation(transform, _camera.transform);
 
+			if (Input.GetButtonDown("Flashlight"))
+			{
+				if (_flashLight)
+					_flashLight.SetActive(!_flashLight.activeSelf);
+			}
+
 			// Process the Jump Button
 			// the jump state needs to read here to make sure it is not missed
 			if (!_jumpButtonPressed && !_isCrouching)
