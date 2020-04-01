@@ -246,7 +246,7 @@ namespace ES.Audio
             // If this if exists in our active pool
             if (_activePool.TryGetValue(id, out activeSound))
             {
-                // Stop the coroutine that miht be waiting to turn off this sound
+                // Stop the coroutine that might be waiting to turn off this sound
                 StopCoroutine(activeSound.Coroutine);
 
                 // Stop the sound manually and disable the game object
@@ -266,7 +266,7 @@ namespace ES.Audio
         // to use as the audio source. If one is not available an audio source
         // with a lower priority will be killed and reused
         public ulong PlayOneShotSound(string track, AudioClip clip, Vector3 position,
-                                      float volume, float spatialBlend, int priority = 128)
+                                      float volume, float spatialBlend, int priority)
         {
             // Do nothing if track does not exist, clip is null or volume is zero
             if (!_tracks.ContainsKey(track) || clip == null || volume.Equals(0f)) return 0;
@@ -312,7 +312,7 @@ namespace ES.Audio
 
         //
         public IEnumerator PlayOneShotSound(string track, AudioClip clip, Vector3 position,
-                                            float volume, float spatialBlend, float duration, int priority = 128)
+                                            float volume, float spatialBlend, float duration, int priority)
         {
             yield return new WaitForSeconds(duration);
             PlayOneShotSound(track, clip, position, volume, spatialBlend, priority);

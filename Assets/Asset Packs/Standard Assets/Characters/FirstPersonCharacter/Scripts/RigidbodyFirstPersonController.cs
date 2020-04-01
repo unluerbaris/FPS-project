@@ -160,7 +160,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
                     (movementSettings.CurrentTargetSpeed*movementSettings.CurrentTargetSpeed))
                 {
                     m_RigidBody.AddForce(desiredMove*SlopeMultiplier(), ForceMode.Impulse);
-                    PlayFootStepSound();
                 }
             }
 
@@ -265,17 +264,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (!m_PreviouslyGrounded && m_IsGrounded && m_Jumping)
             {
                 m_Jumping = false;
-            }
-        }
-
-        void PlayFootStepSound()
-        {
-            if (AudioManager.instance != null && _footSteps != null)
-            {
-                AudioClip soundToPlay;
-                soundToPlay = _footSteps[0];
-                AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
-                                                      _footSteps.volume, _footSteps.spatialBlend, _footSteps.priority);
             }
         }
     }
