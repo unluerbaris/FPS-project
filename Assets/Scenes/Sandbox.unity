@@ -424,6 +424,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carbine Bullets Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 3613909865778763125, guid: 2ae1e769a2f7f49d1aa771a05dd401ba,
+        type: 3}
+      propertyPath: ammoPickupSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a8177992c94f48358434157df6b9048,
+        type: 2}
     - target: {fileID: 5945451342158022733, guid: 2ae1e769a2f7f49d1aa771a05dd401ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -508,6 +514,12 @@ PrefabInstance:
       propertyPath: onPickUp.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3613909865778763125, guid: ec8a8ab6392b94da49e643e37a755ca9,
+        type: 3}
+      propertyPath: ammoPickupSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a8177992c94f48358434157df6b9048,
+        type: 2}
     - target: {fileID: 5945451342158022733, guid: ec8a8ab6392b94da49e643e37a755ca9,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -702,6 +714,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shells Pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 3613909865778763125, guid: aee369bd188074304bcfc07d6119480a,
+        type: 3}
+      propertyPath: ammoPickupSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a8177992c94f48358434157df6b9048,
+        type: 2}
     - target: {fileID: 5945451342158022733, guid: aee369bd188074304bcfc07d6119480a,
         type: 3}
       propertyPath: m_LocalPosition.x
