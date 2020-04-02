@@ -695,6 +695,18 @@ PrefabInstance:
       propertyPath: ammoType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3592160349630225523, guid: 044355ab43f8f49d9b97afb34d334c06,
+        type: 3}
+      propertyPath: shotSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: d33bdd66194eb4faa96a41ab8cfec3f1,
+        type: 2}
+    - target: {fileID: 3592160349630225523, guid: 044355ab43f8f49d9b97afb34d334c06,
+        type: 3}
+      propertyPath: emptySFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 1e11ea8e50ef84e02afb4aa2b61fd0fa,
+        type: 2}
     - target: {fileID: 3900119204846280719, guid: 044355ab43f8f49d9b97afb34d334c06,
         type: 3}
       propertyPath: m_LocalPosition.x
