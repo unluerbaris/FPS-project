@@ -2,6 +2,7 @@
 using UnityEngine;
 using ES.Core;
 using TMPro;
+using ES.Audio;
 
 namespace ES.Combat
 {
@@ -17,6 +18,10 @@ namespace ES.Combat
         [SerializeField] Ammo ammoSlot;
         [SerializeField] AmmoType ammoType;
         [SerializeField] TextMeshProUGUI ammoValueText;
+
+        // Audio Collections
+        [SerializeField] private AudioCollections shotSFX = null;
+        [SerializeField] private AudioCollections emptySFX = null;
 
         bool canShoot = false;
 
@@ -47,9 +52,14 @@ namespace ES.Combat
        
         IEnumerator Shoot()
         {
-            if (ammoSlot.GetCurrentAmmo(ammoType) <= 0) yield break;
-
+            if (ammoSlot.GetCurrentAmmo(ammoType) <= 0)
+            {
+                PlaySFX(emptySFX);
+                yield break;
+            }
             canShoot = false;
+
+            PlaySFX(shotSFX);
 
             UseAmmo();
             PlayMuzzleFlash();
@@ -97,6 +107,17 @@ namespace ES.Combat
         {
             GameObject hitEffectInstance = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(hitEffectInstance, 0.1f);
+        }
+
+        public void PlaySFX(AudioCollections soundFX)
+        {
+            if (AudioManager.instance != null && soundFX != null)
+            {
+                AudioClip soundToPlay;
+                soundToPlay = soundFX[0];
+                AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
+                                                      soundFX.volume, soundFX.spatialBlend, soundFX.priority);
+            }
         }
     }
 }
