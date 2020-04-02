@@ -873,22 +873,6 @@ PrefabInstance:
       propertyPath: damageEffectCanvas
       value: 
       objectReference: {fileID: 553208941}
-    - target: {fileID: 1385342160, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.042
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385342160, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.117
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_SpotAngle
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_Intensity
-      value: 2.7
-      objectReference: {fileID: 0}
     - target: {fileID: 1659361018572400969, guid: 49c7ec65964c94dcaa814cd41495e409,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -964,18 +948,6 @@ PrefabInstance:
       propertyPath: ammoValueText
       value: 
       objectReference: {fileID: 199673187}
-    - target: {fileID: 6581631876643299964, guid: 49c7ec65964c94dcaa814cd41495e409,
-        type: 3}
-      propertyPath: shotSFX
-      value: 
-      objectReference: {fileID: 11400000, guid: e39a3c87a780e416cbe54328a4bfca1f,
-        type: 2}
-    - target: {fileID: 6581631876643299964, guid: 49c7ec65964c94dcaa814cd41495e409,
-        type: 3}
-      propertyPath: emptySFX
-      value: 
-      objectReference: {fileID: 11400000, guid: 9217c8ed507d041f590f2d861eb60b1f,
-        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
 --- !u!64 &1757938670908612108

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1385342159}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalPosition: {x: 0.117, y: -0.042, z: 0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1659361018572400971}
@@ -43,9 +43,9 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9245283, g: 0.87783056, b: 0.6061766, a: 1}
-  m_Intensity: 2.5
+  m_Intensity: 2.7
   m_Range: 18
-  m_SpotAngle: 75
+  m_SpotAngle: 80
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -527,6 +527,18 @@ PrefabInstance:
       propertyPath: ammoType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5228111844570401700, guid: 8a4f059d3827d4231aac6eacc438c19d,
+        type: 3}
+      propertyPath: shotSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 7d3011ebcc8c34498a3930e208286ba5,
+        type: 2}
+    - target: {fileID: 5228111844570401700, guid: 8a4f059d3827d4231aac6eacc438c19d,
+        type: 3}
+      propertyPath: emptySFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 88f057cea33e04f2aadb20dab93fa384,
+        type: 2}
     - target: {fileID: 5725226363797436376, guid: 8a4f059d3827d4231aac6eacc438c19d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -939,6 +951,18 @@ PrefabInstance:
       propertyPath: range
       value: 35
       objectReference: {fileID: 0}
+    - target: {fileID: 7484276719090642750, guid: fa2dbdc84888e4edaaa638c926753368,
+        type: 3}
+      propertyPath: shotSFX
+      value: 
+      objectReference: {fileID: 11400000, guid: e39a3c87a780e416cbe54328a4bfca1f,
+        type: 2}
+    - target: {fileID: 7484276719090642750, guid: fa2dbdc84888e4edaaa638c926753368,
+        type: 3}
+      propertyPath: emptySFX
+      value: 
+      objectReference: {fileID: 11400000, guid: 9217c8ed507d041f590f2d861eb60b1f,
+        type: 2}
     - target: {fileID: 8393192294615049744, guid: fa2dbdc84888e4edaaa638c926753368,
         type: 3}
       propertyPath: m_Layer

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7418c0b61c344b88113bec28871ccf, type: 3}
+  m_Name: Shotgun Shot Empty
+  m_EditorClassIdentifier: 
+  _audioGroup: 
+  _volume: 0.4
+  _spatialBlend: 1
+  _priority: 256
+  _audioClipBanks:
+  - Clips:
+    - {fileID: 8300000, guid: c03690cbe0683488e8a4fa979ce63e7c, type: 3}
+    - {fileID: 8300000, guid: a3db5292328784ca98aa140e1121a0fb, type: 3}
