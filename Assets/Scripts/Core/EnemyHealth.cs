@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.Events;
+﻿using UnityEngine;
+using ES.Audio;
 
 namespace ES.Core
 {
@@ -10,8 +8,9 @@ namespace ES.Core
         [SerializeField] float hitPoints = 100f;
         bool isDead = false;
 
-        [SerializeField] UnityEvent onTakeDamage;
-        [SerializeField] UnityEvent onDie;
+        // Audio Collections
+        [SerializeField] private AudioCollections hurtSFX = null;
+        [SerializeField] private AudioCollections dieSFX = null;
 
         public bool IsDead()
         {
@@ -22,7 +21,7 @@ namespace ES.Core
         {
             if (isDead) return;
 
-            onTakeDamage.Invoke();
+            PlaySFX(hurtSFX);
             BroadcastMessage("OnDamageTaken"); // Call OnDamageTaken to provoke the enemy
 
             hitPoints -= damage;
@@ -36,9 +35,20 @@ namespace ES.Core
         {
             if (isDead) return;
 
-            onDie.Invoke();
+            PlaySFX(dieSFX);
             isDead = true;
             GetComponent<Animator>().SetTrigger("die");
+        }
+
+        public void PlaySFX(AudioCollections soundFX)
+        {
+            if (AudioManager.instance != null && soundFX != null)
+            {
+                AudioClip soundToPlay;
+                soundToPlay = soundFX[0];
+                AudioManager.instance.PlayOneShotSound("Zombies", soundToPlay, transform.position,
+                                                      soundFX.volume, soundFX.spatialBlend, soundFX.priority);
+            }
         }
     }
 }

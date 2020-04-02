@@ -70,7 +70,6 @@ namespace ES.Control
 
         private void ChaseTarget()
         {
-            PlayFootStepSound();
             animator.SetBool("attack", false);
             animator.SetTrigger("move");
             navMeshAgent.SetDestination(target.position);
@@ -95,7 +94,7 @@ namespace ES.Control
                                                   Time.deltaTime * turnSpeed);
         }
 
-        void PlayFootStepSound()
+        public void PlayFootStepSound()
         {
             if (AudioManager.instance != null && _footSteps != null)
             {

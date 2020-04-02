@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7418c0b61c344b88113bec28871ccf, type: 3}
+  m_Name: Zombie Attack
+  m_EditorClassIdentifier: 
+  _audioGroup: 
+  _volume: 0.6
+  _spatialBlend: 1
+  _priority: 128
+  _audioClipBanks:
+  - Clips:
+    - {fileID: 8300000, guid: cb85dcd67042a4b7a8b85707ff6509e9, type: 3}
+    - {fileID: 8300000, guid: 5b07a19e624da4def8cd0dd7df8b39ac, type: 3}
+    - {fileID: 8300000, guid: af546fb9d315a467eb7bd23d6bc999a9, type: 3}
+    - {fileID: 8300000, guid: cf25813275d5b4740af93a323cc63c1f, type: 3}
+    - {fileID: 8300000, guid: e2640eb1e2b6a4b82861cff01e6ee367, type: 3}
+    - {fileID: 8300000, guid: dca49f41f075a48fbad32a09b6eadf61, type: 3}

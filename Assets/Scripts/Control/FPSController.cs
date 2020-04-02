@@ -115,6 +115,9 @@ namespace ES.Control
 	[RequireComponent(typeof(CharacterController))]
     public class FPSController : MonoBehaviour
     {
+		[SerializeField] private AudioCollections _footSteps = null;
+		[SerializeField] private float _crouchAttenuation = 0.2f;
+
         // Inspector Assigned Locomotion Settings
         [SerializeField] private float _walkSpeed = 1.0f;
         [SerializeField] private float _runSpeed = 4.5f;
@@ -301,13 +304,23 @@ namespace ES.Control
 
         void PlayFootStepSound()
         {
-            //if (AudioManager.instance != null && _footSteps != null)
-            //{
-            //    AudioClip soundToPlay;
-            //    soundToPlay = _footSteps[0];
-            //    AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
-            //                                          _footSteps.volume, _footSteps.spatialBlend, _footSteps.priority);
-            //}
+            if (AudioManager.instance != null && _footSteps != null)
+            {
+                AudioClip soundToPlay;
+
+                if (_isCrouching)
+                {
+					soundToPlay = _footSteps[1];
+                }
+                else
+                {
+					soundToPlay = _footSteps[0];
+				}
+
+                AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
+                                                       _isCrouching? _footSteps.volume * _crouchAttenuation : _footSteps.volume,
+                                                       _footSteps.spatialBlend, _footSteps.priority);
+            }
         }
     }
 }

@@ -99,7 +99,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1224652547965539937}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4af54ac80e31c4ec8930a8459b327cc9, type: 3}
   m_Name: 
@@ -217,8 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ea6ebdd14854053a21da5a6f733275, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _walkSpeed: 5
-  _runSpeed: 9
+  _footSteps: {fileID: 11400000, guid: d9525c087ad284e22b8ae0ca823700e1, type: 2}
+  _crouchAttenuation: 0.2
+  _walkSpeed: 4
+  _runSpeed: 7
   _jumpSpeed: 7.5
   _crouchSpeed: 1
   _stickToGroundForce: 5
@@ -278,7 +280,7 @@ MonoBehaviour:
       m_RotationOrder: 4
     _horizontalMultiplier: 0.01
     _verticalMultiplier: 0.02
-    _verticaltoHorizontalSpeedRatio: 2
+    _verticaltoHorizontalSpeedRatio: 1
     _baseInterval: 1
   _flashLight: {fileID: 1385342159}
   _mouseLook:
@@ -409,7 +411,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6191368640791987823}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4af54ac80e31c4ec8930a8459b327cc9, type: 3}
   m_Name: 
@@ -426,7 +428,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6678640733199057440}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4af54ac80e31c4ec8930a8459b327cc9, type: 3}
   m_Name: 

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7418c0b61c344b88113bec28871ccf, type: 3}
+  m_Name: Zombie Hurt
+  m_EditorClassIdentifier: 
+  _audioGroup: 
+  _volume: 0.7
+  _spatialBlend: 1
+  _priority: 128
+  _audioClipBanks:
+  - Clips:
+    - {fileID: 8300000, guid: 34e8ab5e9db6a479397675e1e0878009, type: 3}
+    - {fileID: 8300000, guid: 698998c8c57d24611bf328e5855cd966, type: 3}
+    - {fileID: 8300000, guid: fa05d8a188b1544929fb344c0e0e6843, type: 3}
+    - {fileID: 8300000, guid: c33f9841d65dc44af8e12447bff80688, type: 3}
+    - {fileID: 8300000, guid: 2c5d3c68d3ac04c64873c3fffd1f3896, type: 3}
