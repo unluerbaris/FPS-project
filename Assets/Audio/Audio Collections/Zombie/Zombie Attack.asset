@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zombie Attack
   m_EditorClassIdentifier: 
   _audioGroup: 
-  _volume: 0.6
+  _volume: 0.75
   _spatialBlend: 1
   _priority: 128
   _audioClipBanks:

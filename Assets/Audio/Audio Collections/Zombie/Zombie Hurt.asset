@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zombie Hurt
   m_EditorClassIdentifier: 
   _audioGroup: 
-  _volume: 0.7
+  _volume: 0.8
   _spatialBlend: 1
   _priority: 128
   _audioClipBanks:
