@@ -7,6 +7,7 @@ namespace ES.Control
 {
     public class EnemyAI : MonoBehaviour
     {
+        [SerializeField] AudioCollections warningSFX = null;
         [SerializeField] AudioCollections _footSteps = null;
         [SerializeField] float chaseRange = 8f;
         [SerializeField] float turnSpeed = 5f;
@@ -18,6 +19,7 @@ namespace ES.Control
 
         float distanceToTarget = Mathf.Infinity;
         bool isProvoked = false;
+        bool hasFacedToTarget = false;
 
         void Start()
         {
@@ -82,6 +84,12 @@ namespace ES.Control
 
         public void FaceTarget()
         {
+            if (!hasFacedToTarget)
+            {
+                hasFacedToTarget = true;
+                PlaySFX(warningSFX);
+            }
+
             Vector3 direction = target.position - transform.position;
             Vector3 normalDirection = direction.normalized;
 
@@ -94,15 +102,20 @@ namespace ES.Control
                                                   Time.deltaTime * turnSpeed);
         }
 
-        public void PlayFootStepSound()
+        public void PlaySFX(AudioCollections soundFX)
         {
-            if (AudioManager.instance != null && _footSteps != null)
+            if (AudioManager.instance != null && soundFX != null)
             {
                 AudioClip soundToPlay;
-                soundToPlay = _footSteps[0];
+                soundToPlay = soundFX[0];
                 AudioManager.instance.PlayOneShotSound("Zombies", soundToPlay, transform.position,
-                                                      _footSteps.volume, _footSteps.spatialBlend, _footSteps.priority);
+                                                      soundFX.volume, soundFX.spatialBlend, soundFX.priority);
             }
+        }
+
+        public void PlayFootStepSound()
+        {
+            PlaySFX(_footSteps);
         }
 
         void OnDrawGizmosSelected()

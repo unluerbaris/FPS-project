@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7418c0b61c344b88113bec28871ccf, type: 3}
+  m_Name: Zombie Warning
+  m_EditorClassIdentifier: 
+  _audioGroup: 
+  _volume: 0.8
+  _spatialBlend: 1
+  _priority: 128
+  _audioClipBanks:
+  - Clips:
+    - {fileID: 8300000, guid: 05a3e0a07bc7d496fad2c601430d74b9, type: 3}
+    - {fileID: 8300000, guid: b38a2efeed2794ddd94d3d0fc06decef, type: 3}
+    - {fileID: 8300000, guid: c152aec4c0fe44c7f83fd14cb7c27f45, type: 3}
+    - {fileID: 8300000, guid: bacd4719aeda64190afeaa68dd5d4b01, type: 3}
+    - {fileID: 8300000, guid: 0678f11b5ac794641ac2e0d0c99cc32f, type: 3}
+    - {fileID: 8300000, guid: 4ff6a04b127674582b90fc74dbd82b20, type: 3}
+    - {fileID: 8300000, guid: 38bc8fec7120f476ab8e1e72f4db2c98, type: 3}
+    - {fileID: 8300000, guid: 5c278f9cb4b934086915469d874942ae, type: 3}

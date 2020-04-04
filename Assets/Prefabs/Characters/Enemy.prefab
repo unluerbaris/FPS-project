@@ -85,8 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfbb8cef32855a42ae09f2433251bf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  warningSFX: {fileID: 11400000, guid: 8e99c8f530bf848f8b43753ebf0a4c77, type: 2}
   _footSteps: {fileID: 11400000, guid: cd441af40a980472285d81bf2b15e8a4, type: 2}
-  chaseRange: 18
+  chaseRange: 8
   turnSpeed: 5
 --- !u!114 &219031058
 MonoBehaviour:
