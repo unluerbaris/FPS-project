@@ -3737,6 +3737,18 @@ PrefabInstance:
       propertyPath: damageEffectCanvas
       value: 
       objectReference: {fileID: 553208941}
+    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
+      propertyPath: m_Cookie
+      value: 
+      objectReference: {fileID: 2800000, guid: 2c29c08dd1c0b6749b7cd0fcff7a29fd, type: 3}
+    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
+      propertyPath: m_Range
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
+      propertyPath: m_SpotAngle
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 1659361018572400969, guid: 49c7ec65964c94dcaa814cd41495e409,
         type: 3}
       propertyPath: m_LocalPosition.x
