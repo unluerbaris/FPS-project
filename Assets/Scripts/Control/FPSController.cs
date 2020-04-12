@@ -119,6 +119,8 @@ namespace ES.Control
 		public float toTarget;
 		public static GameObject targetObject;
 
+		[SerializeField] AudioCollections flashlightOnSFX = null;
+		[SerializeField] AudioCollections flashlightOffSFX = null;
 		[SerializeField] private AudioCollections _footSteps = null;
 		[SerializeField] private float _crouchAttenuation = 0.2f;
 
@@ -202,8 +204,16 @@ namespace ES.Control
 
 			if (Input.GetButtonDown("Flashlight"))
 			{
-				if (_flashLight)
-					_flashLight.SetActive(!_flashLight.activeSelf);
+                if (!_flashLight.activeSelf)
+                {
+                    PlaySFX(flashlightOnSFX);
+					_flashLight.SetActive(true);
+                }
+                else
+                {
+					PlaySFX(flashlightOffSFX);
+					_flashLight.SetActive(false);
+				}
 			}
 
 			// Process the Jump Button
@@ -339,5 +349,16 @@ namespace ES.Control
                                                        _footSteps.spatialBlend, _footSteps.priority);
             }
         }
-    }
+
+		public void PlaySFX(AudioCollections soundFX)
+		{
+			if (AudioManager.instance != null && soundFX != null)
+			{
+				AudioClip soundToPlay;
+				soundToPlay = soundFX[0];
+				AudioManager.instance.PlayOneShotSound("Player", soundToPlay, transform.position,
+													  soundFX.volume, soundFX.spatialBlend, soundFX.priority);
+			}
+		}
+	}
 }
