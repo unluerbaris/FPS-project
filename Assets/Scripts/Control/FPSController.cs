@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using ES.Audio;
+using UnityEngine.UI;
 
 namespace ES.Control
 {
@@ -119,6 +120,7 @@ namespace ES.Control
 		public float toTarget;
 		public static GameObject targetObject;
 
+        [SerializeField] Text objectInteractionText; 
 		[SerializeField] AudioCollections flashlightOnSFX = null;
 		[SerializeField] AudioCollections flashlightOffSFX = null;
 		[SerializeField] private AudioCollections _footSteps = null;
@@ -326,7 +328,25 @@ namespace ES.Control
 				toTarget = hit.distance;
 				distanceFromTarget = toTarget;
 				targetObject = hit.transform.gameObject;
-            }
+   
+                // If we are close to interactable object more than 2m,s show the interaction text with the object's name
+                if (distanceFromTarget < 2f && targetObject.tag == "Interactable")
+                {
+					objectInteractionText.gameObject.SetActive(true);
+					objectInteractionText.text = "[E]  " + targetObject.name;
+
+                    // E key can activate the object's animation
+					if (Input.GetKeyDown(KeyCode.E) && targetObject.GetComponent<Animation>() != null)
+					{
+						Animation objectAnimation = targetObject.GetComponent<Animation>();
+						objectAnimation.Play();
+					}
+				}
+                else
+                {
+					objectInteractionText.gameObject.SetActive(false);
+				}		
+			}
         }
 
         void PlayFootStepSound()

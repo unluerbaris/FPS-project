@@ -336,6 +336,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 41237629}
   m_Mesh: {fileID: 4300000, guid: e46292f65faed874a9e13539d5a99f70, type: 3}
+--- !u!114 &100626170 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 100626170, guid: 32d01ae1820c547069ef684013c7e93f,
+    type: 3}
+  m_PrefabInstance: {fileID: 475977320980313040}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &132173826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5945451342158022733, guid: 2ae1e769a2f7f49d1aa771a05dd401ba,
@@ -3482,7 +3494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2120005081
 Transform:
   m_ObjectHideFlags: 0
@@ -3814,18 +3826,6 @@ PrefabInstance:
       propertyPath: damageEffectCanvas
       value: 
       objectReference: {fileID: 553208941}
-    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_Cookie
-      value: 
-      objectReference: {fileID: 2800000, guid: 2c29c08dd1c0b6749b7cd0fcff7a29fd, type: 3}
-    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_Range
-      value: 22
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385342161, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
-      propertyPath: m_SpotAngle
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 1659361018572400969, guid: 49c7ec65964c94dcaa814cd41495e409,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3893,16 +3893,9 @@ PrefabInstance:
       objectReference: {fileID: 199673187}
     - target: {fileID: 3020830338652686151, guid: 49c7ec65964c94dcaa814cd41495e409,
         type: 3}
-      propertyPath: flashlightOnSFX
+      propertyPath: objectInteractionText
       value: 
-      objectReference: {fileID: 11400000, guid: a94fac6e2ff64496da1f488a115fa688,
-        type: 2}
-    - target: {fileID: 3020830338652686151, guid: 49c7ec65964c94dcaa814cd41495e409,
-        type: 3}
-      propertyPath: flashlightOffSFX
-      value: 
-      objectReference: {fileID: 11400000, guid: cfbc446fd811645529b74810c3fbef5a,
-        type: 2}
+      objectReference: {fileID: 100626170}
     - target: {fileID: 5914849152295544371, guid: 49c7ec65964c94dcaa814cd41495e409,
         type: 3}
       propertyPath: ammoValueText
@@ -4535,8 +4528,8 @@ GameObject:
   - component: {fileID: 276085680}
   - component: {fileID: 3701028567423794533}
   m_Layer: 0
-  m_Name: AI_Env_Door_01
-  m_TagString: Untagged
+  m_Name: Door
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5296,7 +5289,7 @@ GameObject:
   - component: {fileID: 8763894313023483635}
   m_Layer: 0
   m_Name: Door and Wall (1)
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
