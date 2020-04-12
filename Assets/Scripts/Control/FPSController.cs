@@ -115,6 +115,10 @@ namespace ES.Control
 	[RequireComponent(typeof(CharacterController))]
     public class FPSController : MonoBehaviour
     {
+		public static float distanceFromTarget;
+		public float toTarget;
+		public static GameObject targetObject;
+
 		[SerializeField] private AudioCollections _footSteps = null;
 		[SerializeField] private float _crouchAttenuation = 0.2f;
 
@@ -186,6 +190,8 @@ namespace ES.Control
 
 		protected void Update()
 		{
+			RaycastToTarget();
+
 			// If we are falling increment timer
 			if (_characterController.isGrounded) _fallingTimer = 0.0f;
 			else _fallingTimer += Time.deltaTime;
@@ -301,6 +307,17 @@ namespace ES.Control
 			else
 				_camera.transform.localPosition = _localSpaceCameraPos;
 		}
+
+        private void RaycastToTarget()
+        {
+			RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit))
+            {
+				toTarget = hit.distance;
+				distanceFromTarget = toTarget;
+				targetObject = hit.transform.gameObject;
+            }
+        }
 
         void PlayFootStepSound()
         {
