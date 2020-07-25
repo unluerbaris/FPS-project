@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toTarget: 0
+  objectInteractionText: {fileID: 0}
   flashlightOnSFX: {fileID: 11400000, guid: a94fac6e2ff64496da1f488a115fa688, type: 2}
   flashlightOffSFX: {fileID: 11400000, guid: cfbc446fd811645529b74810c3fbef5a, type: 2}
   _footSteps: {fileID: 11400000, guid: d9525c087ad284e22b8ae0ca823700e1, type: 2}
@@ -791,7 +792,7 @@ PrefabInstance:
     - target: {fileID: 6927826002611621730, guid: fa2dbdc84888e4edaaa638c926753368,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6927826002611621730, guid: fa2dbdc84888e4edaaa638c926753368,
         type: 3}

@@ -1154,11 +1154,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1659361019875992948, guid: 49c7ec65964c94dcaa814cd41495e409,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1659361020612556349, guid: 49c7ec65964c94dcaa814cd41495e409,
         type: 3}
       propertyPath: ammoValueText
@@ -1179,11 +1174,6 @@ PrefabInstance:
       propertyPath: ammoValueText
       value: 
       objectReference: {fileID: 199673187}
-    - target: {fileID: 6678640733199057440, guid: 49c7ec65964c94dcaa814cd41495e409,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49c7ec65964c94dcaa814cd41495e409, type: 3}
 --- !u!1001 &3201026284034242633
