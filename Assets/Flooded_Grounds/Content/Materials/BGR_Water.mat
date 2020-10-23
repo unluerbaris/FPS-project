@@ -21,11 +21,11 @@ Material:
     m_TexEnvs:
     - _BumpMap:
         m_Texture: {fileID: 2800000, guid: 74423cbef99ad234e9191594e6c27a06, type: 3}
-        m_Scale: {x: 50, y: 50}
+        m_Scale: {x: 150, y: 150}
         m_Offset: {x: 0, y: 0}
     - _BumpMap2:
         m_Texture: {fileID: 2800000, guid: 34894f0cefebc01468c18d5579f2d9e4, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 50, y: 30}
         m_Offset: {x: 0, y: 0}
     - _Cube:
         m_Texture: {fileID: 8900000, guid: 3b5eaa969aa89fb45b025e2ff7d7695a, type: 3}
@@ -41,11 +41,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 08fee7c705165d84294fc4eb7c8a3a10, type: 3}
-        m_Scale: {x: 25, y: 25}
+        m_Scale: {x: 75, y: 75}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 2800000, guid: 2c912b5ea76df334684f8f50f436bf17, type: 3}
-        m_Scale: {x: 10, y: 10}
+        m_Scale: {x: 30, y: 20}
         m_Offset: {x: 0, y: 0}
     - _RefCube:
         m_Texture: {fileID: 8900000, guid: 5b4361bda0746024eb47ad645b331d56, type: 3}
@@ -118,8 +118,8 @@ Material:
     - _SpecContrast: 2
     - _SpecIntensity: 2.3
     - _Transparency: 0.95
-    - _WaveFreq: 20
-    - _WaveHeight: 0.25
+    - _WaveFreq: 40
+    - _WaveHeight: 0.1
     - _WavePower: 1.4029856
     - _WaveScale: 0.058
     - _fogEnd: 400
